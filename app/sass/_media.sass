@@ -5,15 +5,32 @@
 
 // ≥1200px
 +media-breakpoint-down(lg)
+	.my-header
+		header
+			.h3
+				font-size: 100px
 
 // ≥992px
 +media-breakpoint-down(md)
 
 // ≥768px
 +media-breakpoint-down(sm)
-
+	ul
+		margin-top: 40px
+		li
+			margin-bottom: 25px
+	.my-header
+		header
+			.h3
+				font-size: 80px
 // ≥576px
 +media-breakpoint-down(xs)
+	.my-header
+		header
+			.h3
+				font-size: 70px
+			.h2
+				font-size: 36px
 
 
 /*==========  Mobile First  ==========*/

@@ -10,10 +10,10 @@
 	color: #fff
 
 body
-	font-size: 16px
-	min-width: 320px
+	font-size: 15px
+	min-width: 400px
 	position: relative
-	line-height: 1.65
+	line-height: 1.0
 	font-family: $default-font
 	overflow-x: hidden
 	color: $text
@@ -24,6 +24,9 @@ body
 			border-color: red
 		&:required:valid
 			border-color: green
+	p
+		color: #999999
+		font-family: Roboto
 
 .img-responsive
 	display: block
@@ -38,6 +41,146 @@ body
 b, strong
 	font-weight: bold
 
+.section-overlay
+	&:before
+		content: ""
+		position: absolute
+		background: linear-gradient(0deg, $accent2 0%, $accent 100%)
+		width: 100%
+		height: 100%
+		left: 0
+		top: 0
+		opacity: 0.92
+	> *
+		position: relative
+
+.button
+	font-family: Montserrat
+	font-weight: bold
+	font-size: 14px
+	border: 3px solid #fff
+	padding: 14px 33px
+	text-align: center
+.h2
+	font-family: KaushanScript
+	text-align: center
+	font-size: 24px
+	margin-top: 120px
+	margin-bottom: 24px
+.h3
+	font-weight: bold
+	font-family: Montserrat
+	text-transform: uppercase
+	text-align: center
+	font-size: 30px
+	margin-bottom: 90px
+	&:after
+		content: " "
+		border-bottom: 3px solid $accent
+		width: 60px
+		position: absolute
+		left: 50%
+		transform: translateX(-50%)
+		bottom: -40px
+
+
+.my-header
+	.button
+		text-transform: uppercase
+		display: inline-block
+		transition: background-color 1s
+		&:hover
+			background-color: $accent
+			color: #fff
+	header
+		// background-image: url('/img/top-header.png')
+		background-position: center
+		background-size: cover
+		height: 100vh
+		min-height: 850px
+		position: relative
+		//вспомогательная рамка для понимания по центру ли элементы
+		// .container
+		// 	border: 1px solid
+		a
+			color: white
+			text-decoration: none
+			transition: color 1s
+			&:hover
+				color: $accent2
+		.top-logo
+			margin-top: 30px
+			font-size: 30px
+			font-weight: bold
+			font-family: Montserrat
+		#site-menu
+			ul
+				margin-top: 40px
+				list-style: none
+				text-align: center
+				display: flex
+				flex-direction: row
+				justify-content: space-between
+				li
+					// margin-right: 58px
+					&:last-child
+					a
+						text-transform: uppercase
+						position: relative
+						&:after
+							content: " "
+							width: 0%
+							border-bottom: 3px solid $accent2
+							position: absolute
+							transform: translateX(-50%)
+							transition: width 1s
+							left: 50%
+							bottom: -12px
+						&:hover:after
+							width: 105%
+							border-bottom: 3px solid $accent2
+							content: " "
+							position: absolute
+							left: 50%
+							bottom: -12px
+		.h2
+			margin-top: 155px
+			margin-botxom: 24px
+			font-size: 72px
+			color: #fff
+		.h3
+			font-size: 150px
+			color: #fff
+			margin-bottom: 80px
+			&:after
+				content: " "
+				border-color: #fff
+				bottom: -30px
+
+section
+	.container
+		border: 1px solid
+	&.story
+		text-align: center
+		position: relative
+		& .about-photo
+			margin: 100px 0
+			position: relative
+			background-color: red
+			color: red
+			span
+				position: absolute
+				top: 0
+			img
+				width: 100%
+				max-width: 375px
+				min-width: 220px
+				height: 250px
+				object-fit: cover
+				position: relative
+
+
+		
 
 
 @import "media" // Always at the end
