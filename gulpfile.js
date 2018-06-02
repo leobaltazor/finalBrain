@@ -25,14 +25,16 @@ gulp.task("browser-sync", function() {
 });
 
 gulp.task("styles", function() {
-  return gulp
-    .src("app/" + syntax + "/**/*." + syntax + "")
-    .pipe(sass({ outputStyle: "expanded" }).on("error", notify.onError()))
-    .pipe(rename({ suffix: ".min", prefix: "" }))
-    .pipe(autoprefixer(["last 15 versions"]))
-    // .pipe(cleancss({ level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
-    .pipe(gulp.dest("app/css"))
-    .pipe(browserSync.stream());
+  return (
+    gulp
+      .src("app/" + syntax + "/**/*." + syntax + "")
+      .pipe(sass({ outputStyle: "expanded" }).on("error", notify.onError()))
+      .pipe(rename({ suffix: ".min", prefix: "" }))
+      .pipe(autoprefixer(["last 15 versions"]))
+      // .pipe(cleancss({ level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
+      .pipe(gulp.dest("app/css"))
+      .pipe(browserSync.stream())
+  );
 });
 
 gulp.task("js", function() {
@@ -40,6 +42,8 @@ gulp.task("js", function() {
     gulp
       .src([
         "app/libs/jquery/dist/jquery.min.js",
+        "app/libs/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js",
+        "app/libs/OwlCarousel2-2.3.4/dist/owl.carousel.min.js",
         "app/js/common.js" // Always at the end
       ])
       .pipe(concat("scripts.min.js"))

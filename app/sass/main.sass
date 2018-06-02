@@ -1,5 +1,11 @@
 @import "vars"
 @import "fonts"
+@import "../libs/mCustomScrollbar/jquery.mCustomScrollbar.css"
+@import "../libs/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css"
+@import "./fa/fontawesome.scss"
+@import "./fa/fa-brands.scss"
+@import "./fa/fa-solid.scss"
+@import "./fa/fa-regular.scss"
 @import "libs"
 
 ::placeholder
@@ -27,6 +33,7 @@ body
 	p
 		color: #999999
 		font-family: Roboto
+		line-height: 1.6
 
 .img-responsive
 	display: block
@@ -159,28 +166,275 @@ b, strong
 
 section
 	.container
-		border: 1px solid
 	&.story
 		text-align: center
-		position: relative
-		& .about-photo
+		.about-photo
 			margin: 100px 0
 			position: relative
-			background-color: red
-			color: red
-			span
+			background: $accent4
+			width: 100%
+			max-width: 375px
+			min-width: 220px
+			height: 250px
+			.span
 				position: absolute
-				top: 0
-			img
+				width: 100%
+				max-width: 375px
+				min-width: 220px
+				height: 250px
+				opacity: 0.0
+				z-index: 9999
+				color: red
+				&:hover
+					opacity: 1
+				&:hover~.about, .about
+					transform: translate(-15px, -15px)
+				&:hover+.hide
+					opacity: 0
+				.about-text
+					position: absolute
+					top: 50%
+					left: 50%
+					color: white
+					font-size: 34px
+					transform: translate(-50%,-50%)
+			img, .about, .hide
 				width: 100%
 				max-width: 375px
 				min-width: 220px
 				height: 250px
 				object-fit: cover
+.fact
+	background: $accent4
+	&-item
+		padding: 90px 5px
+		color: #fff
+		border-right: 1px solid
+		text-align: center
+		font-family: Montserrat
+		text-transform: uppercase
+		&:first-of-type
+			border-left: 1px solid
+		&>span
+			margin-bottom: 30px
+			font-size: 72px
+			display: block
+			font-weight: bold
+
+.services
+	.hr
+		margin: 50px 0
+		border-bottom: 1px solid #e5e5e5
+		width: 100%
+	.services-wrapper
+		margin-bottom: 125px
+.servic
+	position: relative
+	padding-left: 50px
+	&-icon
+		position: absolute
+		left: 0
+		// border: 1px solid
+		font-size: 30px
+		color: $accent4
+		width: 30px
+		height: 30px
+	&-item
+		font-family: Montserrat
+		text-transform: uppercase
+		margin-bottom: 20px
+	&-description
+
+.font-awesome-custom
+	right: 25px
+	position: absolute
+	font-size: 29px
+	color: #ccc
+	top: 14px
+	@extend .fa
+	&:before
+		content: fa-content($fa-var-angle-up)
+
+.design
+	background-position: center
+	background-size: cover
+	position: relative
+	&.section-overlay:before
+		background: #f9f9f9
+	.devices
+		.table
+			height: 580px
+			width: 100%
+			img
+				object-fit: cover
+				height: 100%
+				width: 100%
+				object-position: 0 0
+		.phone
+			position: absolute
+			bottom: -90px
+			right: -28%
+			padding: 0
+			margin: 0
+
+.we-do
+	p
+		text-align: center
+		margin-bottom: 90px
+	.picture
+		img
+			width: 100%
+			height: 377px
+			object-fit: cover
+	.servic
+		box-sizing: border-box
+		border: 1px solid #e5e5e5
+		padding: 0
+		margin-bottom: 8px
+		&-icon
+			display: inline-block
+			position: relative
+			margin-right: 15px
+		&-item
+			display: inline-block
+			margin-bottom: 0
+		&-head
+			display: flex
+			align-items: center
+			padding: 14px
+			width: 100%
+		label
+			margin: 0
+			padding: 0
+			width: 100%
+		input[type="radio"] 
+			display: none
+		input[type="radio"] 
+			&~ .servic-description
+				height: 0
+				border-top: 0px solid #e5e5e5
+				overflow: auto
+				width: 100%
+				padding: 0px 25px 0px 20px
+				transition: height 1s, border-top 1s, padding 1s
+			&~ .font-awesome-custom
+				right: 24px
+				position: absolute
+				font-size: 32px
+				color: #ccc
+				@extend .fa
+				&:before
+					content: fa-content($fa-var-angle-down)
+		input[type="radio"]:checked 
+			&~ .servic-description 
+				border-top: 1px solid #e5e5e5
+				height: 180px
+				padding: 21px 25px 25px 20px
+			&~ .font-awesome-custom
+				right: 24px
+				position: absolute
+				font-size: 32px
+				color: #ccc
+				@extend .fa
+				&:before
+					content: fa-content($fa-var-angle-up)
+		&-description
+			p
+				text-align: left
+				margin: 0
+				font-family: Roboto
+				font-weight: 300
+				font-style: italic
+				// line-height: 1.5em
+// ::-webkit-scrollbar-button 
+// 	background-image:url('')
+// 	background-repeat:no-repeat
+// 	width: 5px
+// 	height: 0px
+// ::-webkit-scrollbar-track
+// 	background-color: #f5f5f5
+// ::-webkit-scrollbar-thumb 
+// 	-webkit-border-radius: 10px
+// 	border-radius: 10px
+// 	background-color: $accent4
+// ::-webkit-scrollbar-thumb:hover
+// 	background-color:#56999f
+// ::-webkit-resizer
+// 	background-image:url('')
+// 	background-repeat:no-repeat
+// 	width: 5px
+// 	height: 0px
+// ::-webkit-scrollbar
+// 	width: 5px
+.mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+	background-color: $accent4
+.mCS-my-theme.mCSB_scrollTools .mCSB_draggerRail 
+	background-color: #f5f5f5
+
+.testimonials
+	.container
+		border: 1px solid
+		.review
+			margin: 70px 0
+			border: 1px solid
+			&-item
+				height: 210px
+				padding: 0 90px 0 330px
 				position: relative
+			&-avatar
+				position: absolute
+				left: 90px
+				height: 210px
+				width: 210px
+				img
+					height: 100%
+					width: 100%
+					object-fit: cover
+					border-radius: 50%
+			&-text
+				display: flex
+				align-items: center
+				p
+					font-family: Roboto
+					font-size: 24px
+					font-weight: 300
+					font-style: italic
+					&:before
+						content: '"'
+					&:after
+						content: '"'
+			.reviewer
+				font-family: KaushanScript
+				font-size: 24px
+				position: relative
+				padding-left: 70px
+				&:before
+					content: " "
+					border-bottom: 3px solid $accent
+					width: 60px
+					position: absolute
+					left: 0
+					top: 50%
+					opacity: 0.92
+					// transform: translatey(-50%)
+			.owl-nav
+				font-size: 32px
+				color: #ccc
+				.owl-prev
+					width: 30px
+					border: 1px solid
+					top: 50%
+					transform: translateY(-100%)
+					position: absolute
+					left: 23px
+				.owl-next
+					border: 1px solid
+					width: 30px
+					top: 50%
+					transform: translateY(-100%)
+					position: absolute
+					right: 23px
 
-
-		
 
 
 @import "media" // Always at the end
