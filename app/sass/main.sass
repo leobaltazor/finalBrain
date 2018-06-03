@@ -68,6 +68,7 @@ b, strong
 	border: 3px solid #fff
 	padding: 14px 33px
 	text-align: center
+	cursor: pointer
 .h2
 	font-family: KaushanScript
 	text-align: center
@@ -373,16 +374,18 @@ section
 
 .testimonials
 	.container
-		border: 1px solid
+		// border: 1px solid
 		.review
 			margin: 70px 0
-			border: 1px solid
+			// border: 1px solid
 			&-item
-				height: 210px
+				min-height: 210px
 				padding: 0 90px 0 330px
 				position: relative
 			&-avatar
 				position: absolute
+				top: 50%
+				transform: translateY(-50%)
 				left: 90px
 				height: 210px
 				width: 210px
@@ -392,19 +395,19 @@ section
 					object-fit: cover
 					border-radius: 50%
 			&-text
-				display: flex
-				align-items: center
+				padding-top: 30px
 				p
 					font-family: Roboto
 					font-size: 24px
 					font-weight: 300
 					font-style: italic
 					&:before
-						content: '"'
+						content: '“'
 					&:after
-						content: '"'
+						content: '”'
 			.reviewer
 				font-family: KaushanScript
+				text-transform: capitalize
 				font-size: 24px
 				position: relative
 				padding-left: 70px
@@ -420,20 +423,154 @@ section
 			.owl-nav
 				font-size: 32px
 				color: #ccc
-				.owl-prev
+				> *
 					width: 30px
-					border: 1px solid
+					// border: 1px solid
 					top: 50%
 					transform: translateY(-100%)
 					position: absolute
+				.owl-prev
 					left: 23px
 				.owl-next
-					border: 1px solid
-					width: 30px
-					top: 50%
-					transform: translateY(-100%)
-					position: absolute
 					right: 23px
+
+.footer
+	padding-top: 65px
+	background-color: #f8f8f8
+	a
+		color: $text
+		text-decoration: none
+	&-title
+		font-family: Montserrat
+		text-transform: uppercase
+		font-size: 14px
+		font-weight: 400
+		margin-bottom: 10px
+	.subscribe
+		margin-top: 25px
+		display: flex
+		// border: 1px solid #000
+		height: 40px
+		.button
+			padding: 0 33px
+			height: 100%
+			margin-left: 0
+			background: $accent4
+			border: none
+			text-transform: uppercase
+			color: #fff
+		input
+			border: 1px solid #e7e7e7
+			width: 230px
+			padding: 0 13px
+			height: 100%
+			font-family: Roboto
+			font-size: 15px
+			font-weight: 300
+			&::-webkit-input-placeholder
+				font-style: italic
+				color:  #cccccc
+	p
+		padding-top: 28px
+	.followers
+		margin: 55px 0 19px
+		font-size: 14px
+		font-family: Montserrat
+		> span
+			font-weight: bold
+			font-size: 18px
+	&-logo
+		color: #cccccc
+		font-family: Montserrat
+		font-weight: bold
+		font-size: 46px
+	.row
+		> div
+			// border: 1px solid #000
+	.social
+		display: flex
+		width: 100%
+		padding-top: 19px
+		border-top: 1px solid #e5e5e5
+		span
+			font-family: Roboto
+			font-weight: 300
+			font-style: italic
+			color: #999
+		.follow-us
+			display: flex
+			list-style: none
+			li
+				flex-grow: 1
+				a
+					padding: 0 7px
+					color: $accent4
+	.copyright
+		margin-top: 69px
+		height: 60px
+		justify-content: center
+		display: flex
+		border-top: 1px solid #e5e5e5
+		font-family: Montserrat
+		font-size: 14px
+		align-items: center
+		a
+			color: $accent
+	.blogs
+		display: flex
+		height: 100%
+		justify-content: flex-end
+		flex-direction: column
+		a
+			color: $text
+			text-decoration: none
+		.article
+			display: flex
+			flex-direction: column
+			&-item
+				position: relative
+				margin-top: 30px
+				padding-left: 140px
+				display: flex
+				height: 80px
+				justify-content: center
+				flex-direction: column
+			&-img
+				position: absolute
+				left: 0
+				top: 0
+				width: 120px
+				height: 80px
+				img
+					width: 100%
+					height: 100%
+					object-fit: cover
+			&-title
+				font-family: Montserrat
+				text-transform: uppercase
+				color:  #333333
+				font-size: 12px
+				font-weight: 400
+				margin-bottom: 12px
+			&-date
+				font-family: Roboto
+				color:  #999999
+				font-size: 13px
+				font-weight: 300
+				font-style: italic
+	.instagram
+		display: flex
+		height: 100%
+		justify-content: flex-end
+		flex-direction: column
+		&-widget
+			margin-top: 30px
+			margin-bottom: 15px
+		a
+			font-family: Roboto;
+			font-size: 13px;
+			font-weight: 300;
+			font-style: italic;
 
 
 
