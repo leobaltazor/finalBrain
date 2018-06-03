@@ -183,28 +183,46 @@ section
 				max-width: 375px
 				min-width: 220px
 				height: 250px
-				opacity: 0.0
+				opacity: 1
 				z-index: 9999
 				color: red
+				transition: opacity 1s
 				&:hover
 					opacity: 1
-				&:hover~.about, .about
-					transform: translate(-15px, -15px)
-				&:hover+.hide
-					opacity: 0
-				.about-text
-					position: absolute
-					top: 50%
-					left: 50%
-					color: white
-					font-size: 34px
-					transform: translate(-50%,-50%)
-			img, .about, .hide
+				.about
+					&:hover > .section-overlay
+						opacity: 1
+					&:hover > .about-text
+						opacity: 1
+					.section-overlay
+						transition: opacity 0.5s
+						opacity: 0
+					.about-text
+						position: absolute
+						width: 95%
+						top: 50%
+						left: 50%
+						color: white
+						font-size: 30px
+						opacity: 0
+						transform: translate(-50%,-50%)
+						> i
+							display: block
+							margin-bottom: 5px
+			img
+				width: 100%
+				height: 100%
+				object-fit: cover
+			.about, .about-photo
 				width: 100%
 				max-width: 375px
 				min-width: 220px
 				height: 250px
-				object-fit: cover
+				transition: transform 0.5s
+			.about:hover
+				transform: translate(-15px, -15px)
+
+
 .fact
 	background: $accent4
 	&-item
@@ -380,22 +398,27 @@ section
 			// border: 1px solid
 			&-item
 				min-height: 210px
-				padding: 0 90px 0 330px
+				// padding: 0 90px 0 330px
 				position: relative
+				display: flex
+				justify-content: center
+				align-items: center
+				// flex-direction: column
 			&-avatar
-				position: absolute
-				top: 50%
-				transform: translateY(-50%)
-				left: 90px
+				// position: absolute
+				// top: 50%
+				// transform: translateY(-50%)
+				// left: 90px
 				height: 210px
 				width: 210px
 				img
-					height: 100%
-					width: 100%
+					height: 210px
+					width: 210px
 					object-fit: cover
 					border-radius: 50%
 			&-text
 				padding-top: 30px
+				// text-align: left
 				p
 					font-family: Roboto
 					font-size: 24px
@@ -406,6 +429,7 @@ section
 					&:after
 						content: '”'
 			.reviewer
+				align-self: center
 				font-family: KaushanScript
 				text-transform: capitalize
 				font-size: 24px
