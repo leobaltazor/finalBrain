@@ -7,44 +7,114 @@
 +media-breakpoint-down(lg)
 	.my-header
 		header
+			.h2
+				font-size: 50px
 			.h3
 				font-size: 100px
-
-// ≥992px
-+media-breakpoint-down(md)
-
-// ≥768px
-+media-breakpoint-down(sm)
-	ul
-		margin-top: 40px
-		li
-			margin-bottom: 25px
-	.my-header
-		header
-			.h3
-				font-size: 80px
 	.design
 		.devices
 			.phone
-				left: 50%
+				right: 22%
+
+// ≥992px
++media-breakpoint-down(md)
 	.testimonials
-		.container
-			.review-text
-				text-align: center
-				
+		.review
+			.review-item
+				padding: 0 30px
+			.owl-nav
+				.owl-prev
+					left: 0px
+				.owl-next
+					right: 0px
+	.design
+		.devices
+			.phone
+				right: 15%
+	.services
+		.services-wrapper
+			.col-md-6:nth-last-child(n+4)
+				border-bottom: 1px solid transparent
+				padding-bottom: 0
+				margin-bottom: 0
+			.col-md-6:nth-last-child(n+3)
+				border-bottom: 1px solid #e5e5e5
+				padding-bottom: 50px
+				margin-bottom: 50px
+	.footer
+		&-title
+			margin-top: 33px
+// ≥768px
++media-breakpoint-down(sm)
+	.my-header
+		header
+			.h2
+				font-size: 40px
+			.h3
+				font-size: 80px
+			#site-menu
+				ul
+					flex-wrap: wrap
+					justify-content: space-around
+					margin-top: 40px
+					& li:nth-child(n+5)
+						order: 1
+					& li:nth-child(n+6)
+						order: 3
+					li
+						// margin-bottom: 25px
+	.testimonials
+		.review
+			.review-item
+				align-items: center
+				flex-flow: column
+				padding: 0
+			&-text
+				width: 100%
+				p
+					text-align: center
+			.reviewer
+				margin-left: 0
+	.design
+		.devices
+			.phone
+				right: 12%
+	.services
+		.services-wrapper
+			.col-md-6:nth-last-child(n)
+				border-bottom: 1px solid transparent
+				padding-bottom: 0
+				margin-bottom: 0
+			.col-md-6:nth-last-child(n+2)
+				border-bottom: 1px solid #e5e5e5
+				padding-bottom: 50px
+				margin-bottom: 50px
+	.fact .fact-item
+		border-top: 1px solid #fff
+		padding: 60px 0
+		&:last-of-type
+			border-left: 1px solid #fff
+		&:nth-child(3)
+			border-left: 1px solid #fff
+		&>span
+			margin-bottom: 20px
 // ≥576px
 +media-breakpoint-down(xs)
 	.my-header
 		header
-			.h3
-				font-size: 60px
 			.h2
-				font-size: 36px
+				font-size: 29px
+			.h3
+				font-size: 52px
 	.design
 		.devices
 			.phone
-				left: 40%
-
+				right: 10%
+	.fact-item
+		border-top: 1px solid #fff
+		padding: 60px 0
+		&>span
+			margin-bottom: 20px
 
 /*==========  Mobile First  ==========*/
 
