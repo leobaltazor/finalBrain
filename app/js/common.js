@@ -1,9 +1,9 @@
 $(function() {
-	// $(window).on("load", function() {
-	//   $(".servic-description").mCustomScrollbar({
-	// 	theme:"my-theme"
-	//   });
-	// });
+	$(window).on("load", function() {
+	  $(".servic-description").mCustomScrollbar({
+		theme:"my-theme"
+	  });
+	});
 	$(document).ready(function(){
 		$(".owl-carousel").owlCarousel({
 			loop:true,
