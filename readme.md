@@ -26,6 +26,7 @@
 
 <ul>
 	<li><strong>gulp</strong>: run default gulp task (sass, js, watch, browserSync) for web development;</li>
+	<li><strong>build</strong>: project deployment on the folder <strong>build</strong>;</li>
 	<li><strong>rsync</strong>: project deployment on the server from <strong>dist</strong> folder via <strong>RSYNC</strong>;</li>
 </ul>
 
